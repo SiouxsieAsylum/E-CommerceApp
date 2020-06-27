@@ -1,9 +1,12 @@
 import React from 'react';
 import './menu-item.scss';
 
-const MenuItem = ({title}) => {
+const MenuItem = ({title, imageUrl}) => {
     return (             
     <div
+        style={{
+            backgroundImage: `url(${imageUrl})`
+        }}
         className="menu-item">
                 <div
                 className="content">

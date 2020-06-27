@@ -51,6 +51,7 @@ class DirectoryMenu extends Component {
                         <MenuItem 
                             key={id} 
                             title={title} 
+                            imageUrl={imageUrl}
                             />
                     ))
                 }
