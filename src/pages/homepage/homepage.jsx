@@ -1,62 +1,11 @@
 import React from 'react';
-import './homepage.styles.scss'
+import DirectoryMenu from '../../components/directory/directory.jsx'
+import './homepage.scss'
 
 const Homepage = () => (
     <div
      className="homepage">
-        <div
-        className="directory-menu">
-            <div
-            className="menu-item high">
-                    <div
-                    className="content">
-                        <h1 
-                        className="title">HATS</h1>
-                        <span 
-                        className="subtitle">SHOP NOW</span>
-                    </div>
-            </div>
-            <div
-            className="menu-item high">
-                    <div
-                    className="content">
-                        <h1 
-                        className="title">SCARVES</h1>
-                        <span 
-                        className="subtitle">SHOP NOW</span>
-                    </div>
-            </div>
-            <div
-            className="menu-item high">
-                    <div
-                    className="content">
-                        <h1 
-                        className="title">GLOVES</h1>
-                        <span 
-                        className="subtitle">SHOP NOW</span>
-                    </div>
-            </div>
-            <div
-            className="menu-item low">
-                    <div
-                    className="content">
-                        <h1 
-                        className="title">SUNGLASSES</h1>
-                        <span 
-                        className="subtitle">SHOP NOW</span>
-                    </div>
-            </div>
-            <div
-            className="menu-item low">
-                    <div
-                    className="content">
-                        <h1 
-                        className="title">JEWELRY</h1>
-                        <span 
-                        className="subtitle">SHOP NOW</span>
-                    </div>
-            </div>
-        </div>
+        <DirectoryMenu />
     </div>
 )
 
