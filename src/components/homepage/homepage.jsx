@@ -1,4 +1,5 @@
 import React from 'react';
+import './homepage.styles.scss'
 
 const Homepage = () => (
     <div
@@ -20,7 +21,7 @@ const Homepage = () => (
                     <div
                     className="content">
                         <h1 
-                        className="title">HATS</h1>
+                        className="title">SCARVES</h1>
                         <span 
                         className="subtitle">SHOP NOW</span>
                     </div>
@@ -30,7 +31,7 @@ const Homepage = () => (
                     <div
                     className="content">
                         <h1 
-                        className="title">HATS</h1>
+                        className="title">GLOVES</h1>
                         <span 
                         className="subtitle">SHOP NOW</span>
                     </div>
@@ -40,7 +41,7 @@ const Homepage = () => (
                     <div
                     className="content">
                         <h1 
-                        className="title">HATS</h1>
+                        className="title">SUNGLASSES</h1>
                         <span 
                         className="subtitle">SHOP NOW</span>
                     </div>
@@ -50,7 +51,7 @@ const Homepage = () => (
                     <div
                     className="content">
                         <h1 
-                        className="title">HATS</h1>
+                        className="title">JEWELRY</h1>
                         <span 
                         className="subtitle">SHOP NOW</span>
                     </div>
