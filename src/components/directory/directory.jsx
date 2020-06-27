@@ -8,31 +8,38 @@ class DirectoryMenu extends Component {
         this.state = {
             sections: [
                 {
-                    title: 'hats',
-                    subtitle: 'Shop Now'
-
+                  title: 'hats',
+                  imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+                  id: 1,
+                  linkUrl: 'shop/hats'
                 },
                 {
-                    title: 'scarves',
-                    subtitle: 'Shop Now'
-
+                  title: 'jackets',
+                  imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+                  id: 2,
+                  linkUrl: 'shop/jackets'
                 },
                 {
-                    title: 'gloves',
-                    subtitle: 'Shop Now'
-
+                  title: 'sneakers',
+                  imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+                  id: 3,
+                  linkUrl: 'shop/sneakers'
                 },
                 {
-                    title: 'sunglasses',
-                    subtitle: 'Shop Now'
-
+                  title: 'womens',
+                  imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+                  size: 'large',
+                  id: 4,
+                  linkUrl: 'shop/womens'
                 },
                 {
-                    title: 'jewelry',
-                    subtitle: 'Shop Now'
-
-                },
-            ]
+                  title: 'mens',
+                  imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+                  size: 'large',
+                  id: 5,
+                  linkUrl: 'shop/mens'
+                }
+              ]
         }
     }
     render(){
@@ -42,7 +49,7 @@ class DirectoryMenu extends Component {
                 {
                     this.state.sections.map((item, idx) => <MenuItem key={idx} section={item} /> )
                 }
-=            </div>
+           </div>
         )
     }
 }
