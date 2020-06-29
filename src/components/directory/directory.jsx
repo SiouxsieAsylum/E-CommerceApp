@@ -47,6 +47,9 @@ class DirectoryMenu extends Component {
             <div
                 className="directory-menu">
                 {
+                    // spread the parameters passed for legibility and brevity
+                    // you can then just pass the spread into the element and 
+                    // it will assign the pairs to the props object passed to the component
                     this.state.sections.map(({id, ...sectionProps}) => (
                         <MenuItem 
                             key={id} 
