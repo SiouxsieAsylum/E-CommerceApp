@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../button/button';
+import FormInput from '../form-input/form-input'
 import './sign-in.scss';
 
 class SignIn extends Component {
@@ -9,17 +10,17 @@ class SignIn extends Component {
             email: '',
             password: ''
         }
-    }
+    }  
 
     handleChange = (e) => {
         const {name, value} = e.target;
-        console.log(value);
         this.setState({[name]: value})
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log('button')
+        console.log(this.state);
+        this.setState({email: '', password: ''})
     }
 
     render(){
@@ -27,30 +28,33 @@ class SignIn extends Component {
             <div className="sign-in">
                 <h2>Sign In</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="email">Email</label>
-                    <input 
+                    <FormInput 
                         required
                         id="email"
                         name="email" 
                         type="email" 
                         value={this.state.email}
-                        onChange={this.handleChange}
-                        placeholder="e.g. abc@gmail.com" />
-                    <label htmlFor="password">Password</label>
-                    <input 
+                        handleChange={this.handleChange}
+                        label="email"
+                        />
+                    <FormInput 
                         required
                         id="password"
-                        onChange={this.handleChange}
+                        handleChange={this.handleChange}
                         value={this.state.password}
                         name="password" 
                         type="password" 
-                        placeholder="*************" />
-                    <input type="submit" value="Submit" />
+                        label="password"
+                        />
                     {/* <Button 
                         text="SUBMIT"
                         type="submit"
                         handleClick={this.handleSubmit}
                         /> */}
+                    
+                    
+                    <input type="submit" value="Submit" />
+
                 </form>
             </div>
         )
