@@ -46,15 +46,9 @@ class SignIn extends Component {
                         type="password" 
                         label="password"
                         />
-                    {/* <Button 
-                        text="SUBMIT"
-                        type="submit"
-                        handleClick={this.handleSubmit}
-                        /> */}
-                    
-                    
-                    <input type="submit" value="Submit" />
-
+                    <Button 
+                        type="submit" >
+                        Sign In </Button>
                 </form>
             </div>
         )
