@@ -1,10 +1,10 @@
 import React from 'react';
 import './button.scss'
 
-const Button = ({children, ...props}) => {
+const Button = ({children, googleOAuth, ...props}) => {
     return (
         <button
-            className="custom-button"
+            className={`${googleOAuth ? 'google-button' : ''} custom-button`}
             {...props}>
                 {children}
             </button>

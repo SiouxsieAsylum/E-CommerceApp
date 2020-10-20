@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from '../button/button';
 import FormInput from '../form-input/form-input'
+import { signInWithGoogle } from '../../firebase/firebaseUtils'
 import './sign-in.scss';
 
 class SignIn extends Component {
@@ -19,7 +20,6 @@ class SignIn extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
         this.setState({email: '', password: ''})
     }
 
@@ -29,7 +29,7 @@ class SignIn extends Component {
                 <h2>Sign In</h2>
                 <form onSubmit={this.handleSubmit}>
                     <FormInput 
-                        required
+                        // required
                         id="email"
                         name="email" 
                         type="email" 
@@ -38,7 +38,7 @@ class SignIn extends Component {
                         label="email"
                         />
                     <FormInput 
-                        required
+                        // required
                         id="password"
                         handleChange={this.handleChange}
                         value={this.state.password}
@@ -46,9 +46,16 @@ class SignIn extends Component {
                         type="password" 
                         label="password"
                         />
-                    <Button 
-                        type="submit" >
-                        Sign In </Button>
+                    <div className="button-container">
+                        <Button 
+                            type="submit" >
+                            Sign In </Button>
+                        <Button 
+                            googleOAuth
+                            onClick={ signInWithGoogle } >
+                            Sign In With Google </Button>
+                    </div>
+
                 </form>
             </div>
         )

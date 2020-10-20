@@ -13,3 +13,7 @@ a:hover, a:active {
   color: rgb(82, 82, 82);
 }
 
+* {
+  box-sizing: border-box;
+}
+
