@@ -1,14 +1,15 @@
 import React from 'react';
 import './form-input.scss';
 
-const FormInput = ({label, handleChange, ...props}) => (
+const FormInput = ({label, handleChange, id, ...props}) => (
         <div className="group">
             { label ? 
-                <label className={`${props.value.length ? 'shrink' : ''} form-input-label`} >{label}</label> 
+                <label className={`${props.value.length ? 'shrink' : ''} form-input-label`} htmlFor={ id }>{ label }</label> 
                 : null }
                 <input
                     className="form-input" 
-                    {...props}
+                    id={ id }
+                    { ...props }
                     onChange={handleChange} />
         </div>
 )

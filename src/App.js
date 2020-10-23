@@ -4,7 +4,7 @@ import Shop from './pages/shop/shop.jsx'
 import AuthContainer from './pages/authentication/auth-container.jsx'
 import Header from './components/header/header.jsx'
 import { Route, Switch, Link } from 'react-router-dom'
-import { auth } from './firebase/firebaseUtils'
+import { auth, createUserProfile } from './firebase/firebaseUtils'
 import './reset.css';
 import './App.css';
 
@@ -20,10 +20,22 @@ class App extends Component {
   unsubscribe = null;
 
   componentDidMount() {
-    this.unsubscribe = auth.onAuthStateChanged(user => {
-      this.setState({currentUser: user}, ()=>{
-        console.log(user)
-      })
+    this.unsubscribe = auth.onAuthStateChanged(async user => {
+      if (user) {
+        const ref =  await createUserProfile(user);
+        ref.onSnapshot(snapshot => {
+          const data = snapshot.data()
+          const { id } = snapshot;
+          this.setState({
+            currentUser: {
+              id,
+              ...data
+            }
+          }, () => console.log(this.state))
+        })
+      } else {
+        this.setState({currentUser: user})
+      }
     })
   }
 
